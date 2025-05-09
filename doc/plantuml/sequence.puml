@@ -1,0 +1,14 @@
+@startuml
+actor Client
+participant SimpleCppManagerInterface
+participant EntityDatabase
+
+Client -> SimpleCppManagerInterface: resolve(entityReferences, traitSet)
+SimpleCppManagerInterface -> EntityDatabase: Lookup entityReference
+alt Entity found
+  EntityDatabase --> SimpleCppManagerInterface: Return properties
+  SimpleCppManagerInterface -> Client: SuccessCallback(properties)
+else Entity not found
+  SimpleCppManagerInterface -> Client: ErrorCallback("Entity not found")
+end
+@enduml
