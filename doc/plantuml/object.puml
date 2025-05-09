@@ -1,0 +1,7 @@
+@startuml
+object SimpleCppManagerInterface {
+  entityReferencePrefix_ = "simplecpp://"
+  readPolicy_ = "policy_trait"
+  entityDatabase_ = {...}
+}
+@enduml
