@@ -1,0 +1,34 @@
+@startuml
+class SimpleCppManagerInterface {
+  +initialize(managerSettings, hostSession)
+  +settings(hostSession)
+  +displayName()
+  +hasCapability(capability)
+  +managementPolicy(traitSets, policyAccess, context, hostSession)
+  +isEntityReferenceString(someString, hostSession)
+  +entityTraits(entityReferences, entityTraitsAccess, context, hostSession, successCallback, errorCallback)
+  +resolve(entityReferences, traitSet, resolveAccess, context, hostSession, successCallback, errorCallback)
+  -strToPropertyValue(valueAsString)
+  -entityDatabase_: EntityTraitProperties
+  -settings_: InfoDictionary
+  -capabilities_: unordered_set<Capability>
+  -entityReferencePrefix_: string
+  -readPolicy_: TraitId
+}
+
+class Plugin {
+  +identifier()
+  +interface()
+}
+
+class StubPager {
+  +close(hostSession)
+  +hasNext(hostSession)
+  +get(hostSession)
+  +next(hostSession)
+}
+
+SimpleCppManagerInterface --> StubPager : uses
+SimpleCppManagerInterface --> Plugin : instantiates
+Plugin --> SimpleCppManagerInterface : returns
+@enduml
