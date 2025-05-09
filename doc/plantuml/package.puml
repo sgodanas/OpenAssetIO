@@ -1,0 +1,17 @@
+@startuml
+package "openassetio" {
+  [EntityReference]
+  [InfoDictionary]
+  [ManagerInterface]
+}
+
+package "openassetio::managerApi" {
+  [EntityReferencePagerInterface]
+  [HostSessionPtr]
+}
+
+package "openassetio::pluginSystem" {
+  [CppPluginSystemManagerPlugin]
+  [CppPluginSystemPlugin]
+}
+@enduml
