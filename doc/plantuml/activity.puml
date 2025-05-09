@@ -1,0 +1,20 @@
+@startuml
+start
+:Merge previous settings into managerSettings;
+if (Has "prefix" key in settings?) then (yes)
+  :Set entityReferencePrefix_;
+else (no)
+  :Use default prefix;
+endif
+
+if (Has "capabilities" key in settings?) then (yes)
+  :Update capabilities_;
+else (no)
+  :Keep default capabilities;
+endif
+
+:Parse "read_policy" settings;
+:Parse "read_traits" settings and update entityDatabase_;
+:Store updated settings;
+stop
+@enduml
