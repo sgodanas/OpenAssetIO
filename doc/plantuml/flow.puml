@@ -1,0 +1,16 @@
+@startuml
+start
+:Check if resolveAccess is kRead;
+if (resolveAccess is not kRead) then (yes)
+  :Return error;
+  stop
+else (no)
+  :Iterate over entityReferences;
+  if (Entity found in database?) then (yes)
+    :Return properties;
+  else (no)
+    :Return error;
+  endif
+endif
+stop
+@enduml
