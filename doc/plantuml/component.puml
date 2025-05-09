@@ -1,0 +1,10 @@
+@startuml
+package "OpenAssetIO" {
+  [SimpleCppManagerInterface]
+  [Plugin]
+  [StubPager]
+}
+
+[SimpleCppManagerInterface] --> [Plugin] : Uses
+[SimpleCppManagerInterface] --> [StubPager] : Returns
+@enduml
