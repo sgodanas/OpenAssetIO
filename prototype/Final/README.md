@@ -18,6 +18,26 @@ workflows in content creation tooling.
 > - 👀 You can follow the development effort [here](https://github.com/orgs/OpenAssetIO/projects/1/views/7)
 >   and the longer term roadmap [here](ROADMAP.md).
 
+## Who is OpenAssetIO for? (Persona-based Business Case Summaries)
+
+OpenAssetIO delivers value to a variety of roles within media production and software development. Here’s why it matters for you:
+
+### Pipeline Developer / Engineer
+
+What: Easily connect digital content creation tools and asset management systems using a unified interface—no more custom glue code for every tool.
+
+Why care: Spend less time on brittle integrations and more on building creative tools. Maintain pipelines efficiently as new tools or asset managers are adopted.
+
+Activity Diagram (Mermaid):
+
+```mermaid
+flowchart TD
+    A["Pipeline Developer"] --> B["Integrate OpenAssetIO"]
+    B --> C["Connect DCC Tools (e.g., Maya, Nuke)"]
+    B --> D["Connect Asset Mgmt Systems"]
+    C & D --> E["Unified Asset Reference in Pipeline"]
+```
+
 ## Problem statement summary
 
 In modern creative pipelines, data is often managed by an authoritative
